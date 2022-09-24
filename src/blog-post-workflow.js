@@ -261,7 +261,7 @@ Promise.allSettled(promiseArray).then((results) => {
       const postListMarkdown = postsArray.reduce((acc, cur, index) => {
         if (template === 'default') {
           // Default template: - [$title]($url)
-          return acc + `\n- [${cur.title}](${cur.url})` + (((index + 1) === postsArray.length) ? '\n' : '');
+          return acc + `\n- [${cur.title}](https://${cur.url})` + (((index + 1) === postsArray.length) ? '\n' : '');
         } else {
           // Building categories listing
           const categoryTemplate = core.getInput('categories_template');
