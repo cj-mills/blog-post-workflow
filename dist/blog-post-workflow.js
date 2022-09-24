@@ -9956,7 +9956,7 @@ Promise.allSettled(promiseArray).then((results) => {
       const postListMarkdown = postsArray.reduce((acc, cur, index) => {
         if (template === "default") {
           return acc + `
-- [${cur.title}](${cur.url})` + (index + 1 === postsArray.length ? "\n" : "");
+- [${cur.title}](https://${cur.url})` + (index + 1 === postsArray.length ? "\n" : "");
         } else {
           const categoryTemplate = core.getInput("categories_template");
           const categoryList = categoryTemplate === "default" ? cur.categories.join(", ") : cur.categories.reduce((prev, current) => prev + categoryTemplate.replace(/\$category\b/g, current.toString()), "");
